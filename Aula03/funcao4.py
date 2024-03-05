@@ -2,14 +2,12 @@
 # determinado valor definido pelo usuário em
 # um arquivo de texto
 
-def tabuada(valor):
-  """Escreve a tabuada de um determinado número em um arquivo .txt"""
- 
-  with open("tabuada.txt", "w") as arquivo:
-    for i in range(1, 11):
-      arquivo.write(f"{valor} * {i} = {valor * i}\n")
- 
- 
-if __name__ == "__main__":
-  valor = int(input("Digite um número: "))
-  tabuada(valor)
+def tabuada(numero=0):
+    print("O programa pede um número para a tabuada")
+    arq = open("tabuada.txt","a")
+    for i in range(1,11):
+        arq.write(str(numero) + "x" + str(i) + str(i) + " = " + str(numero*i)+"\n")
+    arq.close()
+
+n = input("Digite um número: ")
+tabuada(int(n))
